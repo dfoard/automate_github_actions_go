@@ -23,7 +23,7 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
       - uses: actions/checkout@v2
-      - name: lint with golangci-lint
+      - name: lint with golangci-lint --timeout=3m
         uses: golangci/golangci-lint-action@v2
       - name: run go test
         run: go test ./...
